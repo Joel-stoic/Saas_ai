@@ -1,6 +1,6 @@
 import CompanionCard from '@/components/CompanionCard'
 import CompanionsList from '@/components/CompanionsList'
-import CTA from '@/components/CTA'
+import Cta from '@/components/CTA'
 import { recentSessions } from '@/constants'
 import React from 'react'
 
@@ -20,7 +20,7 @@ const Page = () => {
           companions={recentSessions}
           className='w-2/3 max-lg:w-full'
         />
-        <CTA/>
+        <Cta/>
       </section>
     </main>
   )
