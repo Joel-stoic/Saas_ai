@@ -30,6 +30,7 @@ const CompanionsLibrary = async({searchParams}:SearchParams) => {
           <CompanionCard key={companion.id}{...companion}
           color={getSubjectColor(companion.subject)}
           />
+          
         ))}
       </section>
     </main>
