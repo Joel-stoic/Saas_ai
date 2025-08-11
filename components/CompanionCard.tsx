@@ -5,16 +5,17 @@ interface CompanionCardProps {
   id: string;
   subject: string;
   name: string;
-  duration: number;
-  topic: string;
+  topic?: string;
+  duration?: number;
   color: string;
 }
+
 const CompanionCard = ({
   id,
   subject,
   name,
-  duration,
   topic,
+  duration = 0,
   color,
 }: CompanionCardProps) => {
   return (
@@ -30,9 +31,11 @@ const CompanionCard = ({
           />
         </button>
       </div>
+
       <h2 className="text-2xl font-bold">{name}</h2>
-      <p className="text-sm">{topic}</p>
-      <div className="flex items-center gap-2">
+      {topic && <p className="text-sm">{topic}</p>}
+
+      <div className="flex items-center gap-2 mt-2">
         <Image
           src="/icons/clock.svg"
           alt="duration"
@@ -41,14 +44,14 @@ const CompanionCard = ({
         />
         <p className="text-sm">{duration} minutes</p>
       </div>
-      <Link href={`/companions/${id}`} className="w-full">
-        <button className="btn-primary w-full justify-center">Launch Lesson</button>
+
+      <Link href={`/companions/${id}`} className="w-full mt-4 block">
+        <button className="btn-primary w-full justify-center">
+          Launch Lesson
+        </button>
       </Link>
-      
     </article>
   );
 };
 
 export default CompanionCard;
-
-
